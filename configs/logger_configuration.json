@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "disable_existing_loggers": false,
+  "formatters": {
+    "file_formatter": {
+      "format": "[%(asctime)s][%(filename)s - %(lineno)s][%(levelname)s] %(message)s"
+    },
+    "console_formatter": {
+      "format": "[%(filename)s - %(lineno)s][%(levelname)s] %(message)s"
+    }
+  },
+
+  "handlers": {
+    "file_handler": {
+      "class": "logging.FileHandler",
+      "formatter": "file_formatter",
+      "filename": "Converter.log"
+    },
+    "console_handler": {
+      "class": "logging.StreamHandler",
+      "formatter": "console_formatter",
+      "stream": "ext://sys.stdout"
+    }
+  },
+
+  "root": {
+    "level": "DEBUG",
+    "handlers": ["file_handler", "console_handler"]
+  }
+}
